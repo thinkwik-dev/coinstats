@@ -1,4 +1,5 @@
 <?php
+
 $errorMSG = "";
 
 if (empty($_POST["name"])) {
@@ -25,8 +26,8 @@ if (empty($_POST["terms"])) {
     $terms = $_POST["terms"];
 }
 
-$EmailTo = "yourname@domain.com";
-$Subject = "New privacy request from Leno landing page";
+$EmailTo = "developers@thinkwik.com";
+$Subject = "New privacy request from Cryptostats";
 
 // prepare email body text
 $Body = "";
@@ -44,12 +45,12 @@ $Body .= $terms;
 $Body .= "\n";
 
 // send email
-$success = mail($EmailTo, $Subject, $Body, "From:".$email);
+$success = mail($EmailTo, $Subject, $Body, "From:" . $email);
 // redirect to success page
-if ($success && $errorMSG == ""){
-   echo "success";
-}else{
-    if($errorMSG == ""){
+if ($success && $errorMSG == "") {
+    echo "success";
+} else {
+    if ($errorMSG == "") {
         echo "Something went wrong :(";
     } else {
         echo $errorMSG;
